@@ -8,6 +8,8 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <link href="node_modules/flag-icons/css/flag-icons.min.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-con" href="obrazky/bloodpact.jpg" class="ikona">
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css"/>
+    <style> #map { height: 600px; }</style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -77,6 +79,30 @@
           <td class="col-4">The Crossing</td>
         </tr>
       </table>
+
+       <div id="map"></div>
+
+      
       </div>
+        <script src="node_modules\leaflet\dist\leaflet.js"></script>
+        <script>
+          var map = L.map('map').setView([53.38072600230767, -1.4873740846579013], 6);
+          var sheffield = L.marker([53.380758000775224, -1.487535017190771]).addTo(map);
+          sheffield.bindPopup("<b>The Foundry</b><br>Sheffield");
+          var glasgow = L.marker([55.85465843673587, -4.234669377887673]).addTo(map);
+          glasgow.bindPopup("<b>Saint Luke's</b><br>Glasgow");
+          var manchester = L.marker([53.487185258150504, -2.2394836392008597]).addTo(map);
+          manchester.bindPopup("<b>New Century Hall</b><br>Manchester");
+          var bristol = L.marker([51.4566922310045, -2.5921992736762713]).addTo(map);
+          bristol.bindPopup("<b>SWX</b><br>Bristol");
+          var brighton = L.marker([50.820011249703114, -0.13843426021166844]).addTo(map);
+          sheffield.bindPopup("<b>The Foundry</b><br>Sheffield");
+          var birmingham = L.marker([52.47559603235513, -1.886440202465015]).addTo(map);
+          sheffield.bindPopup("<b>The Foundry</b><br>Sheffield");
+          const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		        maxZoom: 19,
+		        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	        }).addTo(map);
+        </script>
 </body>
 </html>
